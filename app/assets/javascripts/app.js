@@ -20,6 +20,15 @@ angular
               url: '/explore',
               templateUrl:'templates/explore.html'
             })
+                .state('explore.shopping',{
+                  url: '/shopping',
+                  templateUrl: 'templates/shopping.html'
+                })
+
+                .state('explore.restaurants',{
+                  url: '/restaurants',
+                  templateUrl: 'templates/restaurants.html'
+                })
 
             .state('lifestyle', {
               url: '/lifestyle',
@@ -27,7 +36,7 @@ angular
             })
 
             .state('listings', {
-              url: 'listings',
+              url: '/listings',
               templateUrl: 'templates/listings.html'
             })
     });
