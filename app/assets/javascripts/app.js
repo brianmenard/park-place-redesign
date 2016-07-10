@@ -16,9 +16,9 @@ angular
               templateUrl: 'templates/about.html'
             })
 
-            .state('neighborhood',{
-              url: '/neighborhood',
-              templateUrl:'templates/neighborhood.html'
+            .state('explore',{
+              url: '/explore',
+              templateUrl:'templates/explore.html'
             })
 
             .state('lifestyle', {
