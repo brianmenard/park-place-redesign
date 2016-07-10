@@ -18,12 +18,16 @@
   </head>
 
   <body>
-    <div class='nav'>
-      <a ui-sref='home'>Home</a>
-      <a ui-sref='about'>About</a>
-      <a ui-sref='explore'>Explore</a>
-      <a ui-sref='lifestyle'>Lifestyle</a>
-      <a ui-sref='listings'>Listings</a>
+    <div class='navbar navbar-default'>
+      <div class="container-fluid">
+        <ul class="nav navbar-nav">
+          <li><a ui-sref='home'>Home</a>
+          <li><a ui-sref='about'>About</a>
+          <li><a ui-sref='explore'>Explore</a>
+          <li><a ui-sref='lifestyle'>Lifestyle</a>
+          <li><a ui-sref='listings'>Listings</a>
+        </ul>
+      </div>
     </div>
     <div ui-view>
       <%= yield %>
