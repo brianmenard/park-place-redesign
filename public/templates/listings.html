@@ -1,7 +1,15 @@
 <h1>Current Listings </h1>
 
-<input ng-search />
+<div ng-controller='listingCtrl as ctrl'>
+  <input ng-model='ctrl.searchInput' ng-change='ctrl.refilter()' placeholder='Search' />
+  <br><br>
+  <ul>
+    <li ng-repeat='listing in listings | filter:ctrl.searchInput'>
+      {{ listing.address }} -- {{ listing.price }}
+      <p>
+        {{ listing.description}}
+      </p>
+    </li>
+  </ul>
 
-<ul>
-  <li ng-repeat='listing in listings'>{{ listing.address }}</li>
-</ul>
+</div>
