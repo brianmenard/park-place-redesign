@@ -1,11 +1,35 @@
 <h1>Current Listings </h1>
 
 <div ng-controller='listingCtrl as ctrl'>
-  <input ng-model='ctrl.searchInput' ng-change='ctrl.refilter()' placeholder='Search' />
+  <input ng-model='ctrl.searchInput' placeholder='Search' />
+  <br><br>
+  Filter by:
+  <br>
+  Bedrooms:
+      <select ng-model='ctrl.bedroomFilter'>
+        <option value=''></option>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+        <option value='3'>3</option>
+      </select>
+
+  Bathrooms:
+      <select ng-model='ctrl.bathroomFilter'>
+        <option value=''></option>
+        <option value='1'>1</option>
+        <option value='2'>2</option>
+      </select>
+
   <br><br>
   <ul>
-    <li ng-repeat='listing in listings | filter:ctrl.searchInput'>
+    <li ng-repeat='listing in listings | filter:ctrl.searchInput |
+    filter:{bedrooms: ctrl.bedroomFilter} |
+    filter:{bathrooms: ctrl.bathroomFilter}'>
       {{ listing.address }} -- {{ listing.price }}
+      <br>
+      Bedrooms: {{ listing.bedrooms }}
+      <br>
+      Bathrooms: {{ listing.bathrooms }}
       <p>
         {{ listing.description}}
       </p>
