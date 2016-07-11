@@ -1,21 +1,7 @@
-function listingCtrl($scope, $filter){
+function listingCtrl($scope, $filter, $http){
   $scope.listings = [
-    {address: 'Unit 3908',
-      price: '$1700/mo',
-      bedrooms: '1',
-      bathrooms: '1',
-      description: 'Lovely one bedroom with large windows'},
-    {address: 'Unit 5243',
-      price: '$2450/mo',
-      bedrooms: '2',
-      bathrooms: '1',
-      description: 'Two bedroom on the 52nd floor, pet friendly'},
-    {address: 'Unit 3407',
-      price: '$1650/mo',
-      bedrooms: '1',
-      bathrooms: '2',
-      description: 'One bedroom with newly renovated kitchen'}
-  ];
+      $http.get('/listings')
+  ]
 
   $scope.searchInput = '';
 
@@ -34,3 +20,22 @@ function listingCtrl($scope, $filter){
 angular
   .module('app')
   .controller('listingCtrl', listingCtrl)
+
+/**
+{address: 'Unit 3908',
+  price: '$1700/mo',
+  bedrooms: '1',
+  bathrooms: '1',
+  description: 'Lovely one bedroom with large windows'},
+{address: 'Unit 5243',
+  price: '$2450/mo',
+  bedrooms: '2',
+  bathrooms: '1',
+  description: 'Two bedroom on the 52nd floor, pet friendly'},
+{address: 'Unit 3407',
+  price: '$1650/mo',
+  bedrooms: '1',
+  bathrooms: '2',
+  description: 'One bedroom with newly renovated kitchen'}
+
+**/
