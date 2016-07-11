@@ -1,2 +1,5 @@
-class Listing < ApplicationRecord
+class Listing < ActiveRecord
+
+
+
 end
