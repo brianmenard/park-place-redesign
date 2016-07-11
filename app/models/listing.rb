@@ -1,3 +1,3 @@
-class Listing < ActiveRecord
+class Listing < ApplicationRecord
 
 end
