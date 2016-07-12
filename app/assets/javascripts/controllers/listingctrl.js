@@ -1,7 +1,11 @@
 function listingCtrl($scope, $filter, $http){
-  $scope.listings = [
-      $http.get('/listings')
-  ]
+
+  //$scope.listings = angular.fromJson($http.get('/listings.json'))
+
+  $http.get('/listings')
+       .then(function(res){
+          $scope.listings = res.data;
+        });
 
   $scope.searchInput = '';
 
