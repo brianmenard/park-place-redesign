@@ -5,4 +5,14 @@ class ListingsController < ApplicationController
     render json: @listings.to_json
   end
 
+  def create
+  end
+
+  def update
+    @listings = Listing.find_by(id: params[:id])
+  end
+
+  def delete
+  end
+
 end
