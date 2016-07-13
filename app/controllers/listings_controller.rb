@@ -5,13 +5,4 @@ class ListingsController < ApplicationController
     render json: @listings.to_json
   end
 
-  def create
-  end
-
-  def update
-  end
-
-  def delete
-  end
-
 end

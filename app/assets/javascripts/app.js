@@ -37,12 +37,8 @@ angular
 
             .state('listings', {
               url: '/listings',
-              templateUrl: 'templates/listings/index.html',
+              templateUrl: 'templates/listings.html',
               controller: 'listingCtrl'
             })
 
-            .state('listings.new', {
-              url: '/new'
-              templateUrl: 'templates/listings/new.html'
-            })
     });
