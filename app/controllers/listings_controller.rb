@@ -9,7 +9,6 @@ class ListingsController < ApplicationController
   end
 
   def update
-    @listings = Listing.find_by(id: params[:id])
   end
 
   def delete
