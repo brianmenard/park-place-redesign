@@ -41,7 +41,8 @@ angular
               controller: 'listingCtrl'
             })
 
-            .state('/listings/new', {
+            .state('listings.new', {
+              url: '/new'
               templateUrl: 'templates/listings/new.html'
             })
     });
