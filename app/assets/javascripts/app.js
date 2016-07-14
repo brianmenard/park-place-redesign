@@ -46,4 +46,9 @@ angular
                 templateUrl: 'templates/listings/new.html'
               })
 
+            .state('listings.show', {
+              url: '/:listingId',
+              templateUrl: 'templates/listings/show.html'
+            })
+
     });

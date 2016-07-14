@@ -36,14 +36,7 @@
     <li ng-repeat='listing in listings | filter:ctrl.searchInput |
     filter:{bedrooms: ctrl.bedroomFilter} |
     filter:{bathrooms: ctrl.bathroomFilter}'>
-      <h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3>
-      Bedrooms: {{ listing.bedrooms }}
-      <br>
-      Bathrooms: {{ listing.bathrooms }}
-      <h4>Description:</h4>
-      <p>
-        {{ listing.description}}
-      </p>
+      <a ui-sref='listings.show({ id: listing.id })'><h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3></a>
     </li>
   </ul>
 
