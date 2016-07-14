@@ -1,7 +1,5 @@
 function listingCtrl($scope, $filter, $http){
 
-  //$scope.listings = angular.fromJson($http.get('/listings.json'))
-
   $http.get('/listings')
        .then(function(res){
           $scope.listings = res.data;
