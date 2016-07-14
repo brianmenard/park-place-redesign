@@ -5,4 +5,8 @@ class ListingsController < ApplicationController
     render json: @listings.to_json
   end
 
+  def create
+    Listing.create(params)
+  end
+
 end
