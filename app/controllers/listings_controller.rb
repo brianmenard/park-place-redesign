@@ -1,12 +1,18 @@
 class ListingsController < ApplicationController
 
+skip_before_action :verify_authenticity_token
+
   def index
     @listings = Listing.all
     render json: @listings.to_json
   end
 
   def create
-    Listing.create(params)
+    Listing.create(listing_params)
+  end
+
+  def listing_params
+    params.permit(:unit, :price, :bedrooms, :bathrooms, :description)
   end
 
 end

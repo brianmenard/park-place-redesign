@@ -1,8 +1,6 @@
 <h1>Current Listings </h1>
 
 <div ng-controller='listingCtrl as ctrl'>
-  <input ng-model='ctrl.searchInput' placeholder='Search' />
-  <br><br>
 
   <a ui-sref='listings.new'>New Listing</a>
 
@@ -12,6 +10,9 @@
   </div>
 
   <br>
+
+  <input ng-model='ctrl.searchInput' placeholder='Search' />
+  <br><br>
 
   Filter by:
   <br>
@@ -35,7 +36,7 @@
     <li ng-repeat='listing in listings | filter:ctrl.searchInput |
     filter:{bedrooms: ctrl.bedroomFilter} |
     filter:{bathrooms: ctrl.bathroomFilter}'>
-      <h3>Unit #{{ listing.unit }} -- {{ listing.price }}</h3>
+      <h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3>
       Bedrooms: {{ listing.bedrooms }}
       <br>
       Bathrooms: {{ listing.bathrooms }}
@@ -45,5 +46,7 @@
       </p>
     </li>
   </ul>
+
+<br><br>
 
 </div>
