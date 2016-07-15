@@ -52,4 +52,10 @@ angular
               controller: 'listingCtrl'
             })
 
+            .state('residents', {
+              url: '/residents',
+              templateUrl: 'templates/residents.html',
+              controller: 'residentsCtrl'
+            })
+
     });
