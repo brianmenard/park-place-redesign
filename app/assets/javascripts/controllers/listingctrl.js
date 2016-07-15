@@ -1,4 +1,4 @@
-function listingCtrl($scope, $filter, $http){
+function listingCtrl($scope, $filter, $http, $stateParams){
 
   $http.get('/listings')
        .then(function(res){
@@ -11,11 +11,11 @@ function listingCtrl($scope, $filter, $http){
 
   $scope.bathroomFilter = '';
 
-  $scope.refilter = function(){
-    $scope.listings = $filter('filter')($scope.listings, this.searchInput);
-  };
-
-  $scope.refilter();
+  $http.get('/listings/' + $stateParams.listingId)
+    .then(function(res){
+      $scope.listing = res.data
+      $scope.description = $scope.listing.description;
+    })
 
 }
 

@@ -46,9 +46,10 @@ angular
                 templateUrl: 'templates/listings/new.html'
               })
 
-            .state('listings.show', {
-              url: '/:listingId',
-              templateUrl: 'templates/listings/show.html'
+            .state('listings_show', {
+              url: '/listing/:listingId',
+              templateUrl: 'templates/listings/show.html',
+              controller: 'listingCtrl'
             })
 
     });

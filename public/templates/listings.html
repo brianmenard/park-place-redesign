@@ -36,7 +36,7 @@
     <li ng-repeat='listing in listings | filter:ctrl.searchInput |
     filter:{bedrooms: ctrl.bedroomFilter} |
     filter:{bathrooms: ctrl.bathroomFilter}'>
-      <a ui-sref='listings.show({ id: listing.id })'><h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3></a>
+      <a ui-sref="listings_show({listingId:listing.id})"><h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3></a>
     </li>
   </ul>
 

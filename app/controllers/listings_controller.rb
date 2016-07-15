@@ -7,6 +7,11 @@ skip_before_action :verify_authenticity_token
     render json: @listings.to_json
   end
 
+  def show
+    @listing = Listing.find(params[:id])
+    render json: @listing.to_json
+  end
+
   def create
     Listing.create(listing_params)
   end
