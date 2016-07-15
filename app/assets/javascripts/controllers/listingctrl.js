@@ -14,7 +14,6 @@ function listingCtrl($scope, $filter, $http, $stateParams){
   $http.get('/listings/' + $stateParams.listingId)
     .then(function(res){
       $scope.listing = res.data
-      $scope.description = $scope.listing.description;
     })
 
 }
