@@ -1,4 +1,4 @@
-function listingCtrl($scope){
+function residentsCtrl($scope){
 
   $scope.keys = 0;
   $scope.fobs = 0;
