@@ -5,6 +5,10 @@ function residentsCtrl($scope){
 
   $scope.total = 0;
 
+  $scope.recalculate = function(){
+    $scope.total = ($scope.keys*25) + ($scope.fobs*50)
+  };
+
 }
 
 angular

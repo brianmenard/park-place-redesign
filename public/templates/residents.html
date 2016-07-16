@@ -1,10 +1,16 @@
 <div ng-controller='residentsCtrl as ctrl'>
-  Key fobs: <input ng-model='ctrl.fobs' />
+
+<h1> Residents Center </h1>
+
+<p>Use the below tool to calculate the cost of addition or replacement keys
+  or keyfobs.  Note that all payment must be submitted in the manager's office on
+  the first floor</p>
+
+  Key fobs: <input ng-model='fobs' ng-change='recalculate()' />
   <br>
-  Keys: <input ng-model='ctrl.keys'/>
+  Keys: <input ng-model='keys' ng-change='recalculate()'/>
   <br>
   --------
   <br>
-  {{ fobs }}
-  {{ keys }}
+  Total: ${{ total }}
 </div>
