@@ -1,26 +1,27 @@
 <br>
 
 <form action='/listings' method="post">
+
   <label>Unit #</label>
-  <input type='text' name='unit'/>
+  <input type='text' name='unit' ng-model='ctrl.unit' required="required"/>
   <br>
   <label>Price</label>
-  <input type="text" name="price" />
+  <input type="text" name="price" required="required" />
   <br>
   <label>Bedrooms</label>
-  <select name="bedrooms">
+  <select name="bedrooms" required="required">
     <option value="1">1</option>
     <option value="2">2</option>
   </select>
   <label>Bathrooms</label>
-  <select name="bathrooms">
+  <select name="bathrooms" required="required">
     <option value="1">1</option>
     <option value="2">2</option>
   </select>
   <br>
   <label>Description</label>
   <br>
-  <textarea name='description' rows="3" cols="30"/>
+  <textarea name='description' rows="3" cols="30" required="required" />
   <br>
   <input type="submit" value="Submit" id='submit'/>
 </form>
