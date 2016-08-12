@@ -20,12 +20,13 @@ function listingCtrl($scope, $filter, $http, $stateParams){
 
   $scope.saveListing = function(listing){
     $http({
-  method  : 'POST',
-  url     : '/listings',
-  data    : $.param($scope.newListing),  // pass in data as strings
-  headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
- })
-  .success(function(data) {
+      method  : 'POST',
+      url     : '/listings',
+      data    : $.param($scope.newListing),  // pass in data as strings
+      headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
+    })
+    .success(function(data) {
+
 //    console.log(data);
 
     //if (!data.success) {
@@ -36,7 +37,9 @@ function listingCtrl($scope, $filter, $http, $stateParams){
       // if successful, bind success message to message
       //$scope.message = data.message;
     //}
-  });
+    });
+
+
   }
 
     }
