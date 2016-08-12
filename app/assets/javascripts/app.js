@@ -43,7 +43,7 @@ angular
 
               .state('listings.new', {
                 url: '/new',
-                templateUrl: 'templates/listings/new.html'
+                templateUrl: 'templates/listings/form.html'
               })
 
             .state('listings_show', {

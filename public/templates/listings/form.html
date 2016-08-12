@@ -2,31 +2,30 @@
 <div ng-controller='listingCtrl as ctrl'>
 <form name="new_listing" ng-submit='saveListing(listing)'>
 
-  <label>Unit Number</label>
+  <label>Unit #:</label>
   <input type='text' name='unit' ng-model='newListing.unit' required="required"/>
   <br>
-  <label>Price</label>
+  <label>Price:</label>
   <input type="text" name="price" ng-model='newListing.price' required="required" />
   <br>
-  <label>Bedrooms</label>
+  <label>Bedrooms:</label>
   <select name="bedrooms" ng-model='newListing.bedrooms' required="required">
     <option value="1">1</option>
     <option value="2">2</option>
   </select>
-  <label>Bathrooms</label>
+  <label>Bathrooms:</label>
   <select name="bathrooms" ng-model='newListing.bathrooms' required="required">
     <option value="1">1</option>
     <option value="2">2</option>
   </select>
   <br>
-  <label>Description</label>
+  <label>Description:</label>
   <br>
   <textarea name='description' rows="3" cols="30" ng-model='newListing.description' required="required" />
   <br>
   <input type="submit" value="Submit" id='submit'/>
 </form>
 <br>
-TEST!
 
 </div>
 <a ui-sref='listings'>close</a>
