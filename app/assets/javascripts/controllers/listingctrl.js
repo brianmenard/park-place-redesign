@@ -11,10 +11,19 @@ function listingCtrl($scope, $filter, $http, $stateParams){
 
   $scope.bathroomFilter = '';
 
+  $scope.newListing = {};
+
   $http.get('/listings/' + $stateParams.listingId)
     .then(function(res){
       $scope.listing = res.data
     });
+
+  $scope.saveListing = function(listing){
+    $http.post('/listings', listing)
+      .then(function(res){
+        //NEED TO PASS FORM DATA TO THIS FUNCTION
+      })
+  }
 
     }
 
