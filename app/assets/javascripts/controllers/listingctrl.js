@@ -1,9 +1,15 @@
 function listingCtrl($scope, $filter, $http, $stateParams){
 
-  $http.get('/listings')
+  $scope.listings = {};
+
+  $scope.updateListings = function(){
+    $http.get('/listings')
        .then(function(res){
           $scope.listings = res.data;
         });
+      };
+
+      $scope.updateListings();
 
   $scope.searchInput = '';
 
@@ -26,6 +32,8 @@ function listingCtrl($scope, $filter, $http, $stateParams){
       headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
     })
     .success(function(data) {
+
+    $scope.updateListings();
 
 //    console.log(data);
 
