@@ -1,4 +1,4 @@
-function listingCtrl($scope, $filter, $http, $stateParams){
+function listingCtrl($scope, $filter, $http, $stateParams, newListingService){
 
   $scope.listings = {};
 
@@ -9,7 +9,7 @@ function listingCtrl($scope, $filter, $http, $stateParams){
         });
       };
 
-      $scope.updateListings();
+  $scope.updateListings();
 
   $scope.searchInput = '';
 
@@ -24,33 +24,14 @@ function listingCtrl($scope, $filter, $http, $stateParams){
       $scope.listing = res.data
     });
 
-  $scope.saveListing = function(listing){
-    $http({
-      method  : 'POST',
-      url     : '/listings',
-      data    : $.param($scope.newListing),  // pass in data as strings
-      headers : { 'Content-Type': 'application/x-www-form-urlencoded' }  // set the headers so angular passing info as form data (not request payload)
-    })
-    .success(function(data) {
+  $scope.createListing = function(listingData){
+    newListingService.saveListing(listingData)
+    .then(function(response){
+        $scope.updateListings();
+      });
+  };
 
-    $scope.updateListings();
-
-//    console.log(data);
-
-    //if (!data.success) {
-      // if not successful, bind errors to error variables
-    //  $scope.errorName = data.errors.name;
-      //$scope.errorSuperhero = data.errors.superheroAlias;
-    //} else {
-      // if successful, bind success message to message
-      //$scope.message = data.message;
-    //}
-    });
-
-
-  }
-
-    }
+}
 
 angular
   .module('app')

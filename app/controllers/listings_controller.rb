@@ -13,6 +13,7 @@ skip_before_action :verify_authenticity_token
   end
 
   def create
+    puts params
     Listing.create(listing_params)
   end
 
