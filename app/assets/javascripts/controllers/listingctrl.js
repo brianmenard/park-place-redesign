@@ -1,4 +1,4 @@
-function listingCtrl($scope, $filter, $http, $stateParams, newListingService){
+function listingCtrl($scope, $filter, $http, $stateParams, $state, newListingService, deleteListingService){
 
   $scope.listings = {};
 
@@ -29,6 +29,14 @@ function listingCtrl($scope, $filter, $http, $stateParams, newListingService){
     .then(function(response){
         $scope.updateListings();
       });
+  };
+
+  $scope.deleteListing = function(listing){
+    deleteListingService.deleteListing(listing)
+    .then(function(response){
+      $scope.updateListings();
+      $state.go('listings');
+    })
   };
 
 }

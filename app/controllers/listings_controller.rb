@@ -20,4 +20,9 @@ skip_before_action :verify_authenticity_token
     params.permit(:unit, :price, :bedrooms, :bathrooms, :description)
   end
 
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy()
+  end
+
 end
