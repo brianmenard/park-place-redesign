@@ -1,10 +1,10 @@
 <h1>Unit #{{ listing.unit }}</h1>
-${{ listing.price }}
-<br><br>
-Bedrooms: {{ listing.bedrooms}}
+<h4>${{ listing.price }}</h4>
+
+<strong>Bedrooms:</strong> {{ listing.bedrooms}}
 <br>
-Bathrooms: {{ listing.bathrooms }}
-<br><br>
+<strong>Bathrooms:</strong> {{ listing.bathrooms }}
+<h4>Description:</h4>
 <p> {{ listing.description }} </p>
 
 <a href='#' ng-click="deleteListing(listing)">Delete</a>

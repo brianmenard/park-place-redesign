@@ -13,7 +13,8 @@ skip_before_action :verify_authenticity_token
   end
 
   def create
-    Listing.create(listing_params)
+    listing = Listing.create(listing_params)
+    render json: listing.to_json
   end
 
   def listing_params

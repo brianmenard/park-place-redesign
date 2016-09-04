@@ -1,4 +1,5 @@
-function listingCtrl($scope, $filter, $http, $stateParams, $state, newListingService, deleteListingService){
+function listingCtrl($scope, $filter, $http, $stateParams, $state,
+  newListingService, deleteListingService){
 
   $scope.listings = {};
 
@@ -27,7 +28,11 @@ function listingCtrl($scope, $filter, $http, $stateParams, $state, newListingSer
   $scope.createListing = function(listingData){
     newListingService.saveListing(listingData)
     .then(function(response){
-        $scope.updateListings();
+        //console.log(response);
+        console.log(response.data);
+        console.log($scope.listings);
+        $scope.listings.push(response.data);
+        //$scope.updateListings();  DONT WANT TO MAKE ANOTHER CALL
       });
   };
 
