@@ -1,45 +1,50 @@
-<h1>Current Listings </h1>
+<div class="row">
+  <div class="col-xs-2"></div>
+    <div class="col-xs-8">
+    <h1>Current Listings </h1>
 
-<div ng-controller='listingCtrl as ctrl'>
+    <div ng-controller='listingCtrl as ctrl'>
 
-  <a ui-sref='listings.new'>New Listing</a>
+      <a ui-sref='listings.new'>New Listing</a>
 
-  <br>
+      <br>
 
-  <div ui-view>
-  </div>
+      <div ui-view>
+      </div>
 
-  <br>
+      <br>
 
-  <input ng-model='ctrl.searchInput' placeholder='Search' />
-  <br><br>
+      <input ng-model='ctrl.searchInput' placeholder='Search' />
+      <br><br>
 
-  Filter by:
-  <br>
-  Bedrooms:
-      <select ng-model='ctrl.bedroomFilter'>
-        <option value=''></option>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-        <option value='3'>3</option>
-      </select>
+      Filter by:
+      <br>
+      Bedrooms:
+          <select ng-model='ctrl.bedroomFilter'>
+            <option value=''></option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+            <option value='3'>3</option>
+          </select>
 
-  Bathrooms:
-      <select ng-model='ctrl.bathroomFilter'>
-        <option value=''></option>
-        <option value='1'>1</option>
-        <option value='2'>2</option>
-      </select>
+      Bathrooms:
+          <select ng-model='ctrl.bathroomFilter'>
+            <option value=''></option>
+            <option value='1'>1</option>
+            <option value='2'>2</option>
+          </select>
 
-  <br><br>
-  <ul>
-    <li ng-repeat='listing in listings | filter:ctrl.searchInput |
-    filter:{bedrooms: ctrl.bedroomFilter} |
-    filter:{bathrooms: ctrl.bathroomFilter}'>
-      <a ui-sref="listings_show({listingId:listing.id})"><h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3></a>
-    </li>
-  </ul>
+      <br><br>
+      <ul>
+        <li ng-repeat='listing in listings | filter:ctrl.searchInput |
+        filter:{bedrooms: ctrl.bedroomFilter} |
+        filter:{bathrooms: ctrl.bathroomFilter}'>
+          <a ui-sref="listings_show({listingId:listing.id})"><h3>Unit #{{ listing.unit }} -- ${{ listing.price }}</h3></a>
+        </li>
+      </ul>
 
-<br><br>
+    <br><br>
 
+    </div>
+  <div class="col-xs-2"></div>
 </div>
