@@ -57,5 +57,10 @@ angular
               templateUrl: 'templates/residents.html',
               controller: 'residentsCtrl'
             })
+            
+            .state('contact', {
+              url:'/contact',
+              templateUrl: 'templates/contact.html'
+            })
 
     });
